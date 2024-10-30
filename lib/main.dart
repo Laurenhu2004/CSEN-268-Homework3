@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) => const HomePage(),
-            '/noBloc': (context) => const StatefulLoginPage(),
+            '/noBloc': (context) => const BookInfoPage(),
             '/bloc': (context) => const SignInPage(),
             '/cubit': (context) => const LoginPage(),
           }),

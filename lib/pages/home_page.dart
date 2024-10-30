@@ -1,4 +1,5 @@
 import 'package:CSEN268_F24/pages/sign_in/sign_in_page.dart';
+import 'package:CSEN268_F24/pages/stateful_login_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,7 +34,12 @@ class HomePage extends StatelessWidget {
               FilledButton(
                 child: const Text("Login - no Bloc/Cubit"),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/noBloc');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BookInfoPage()
+                    )
+                  );
                 },
               ),
               const SizedBox(height: 30),
