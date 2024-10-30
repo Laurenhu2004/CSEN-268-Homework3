@@ -18,39 +18,42 @@ class _BookInfoPageState extends State<BookInfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Book Info")
+        title: const Text("Book Detail"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Book cover image
-              Center(
-                child: Image.network(
-                  bookCoverUrl, // Use an asset if local image
-                  height: 200,
-                  fit: BoxFit.cover,
+              const SizedBox(height: 20),
+              Center( 
+                child: Container(
+                  height: 300,
+                  width: 200,
+                  color: Colors.blue,
                 ),
               ),
-              const SizedBox(height: 20),
-              // Book title
+              const SizedBox(height: 30),
               Text(
                 bookTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: 28),
               ),
               const SizedBox(height: 10),
-              // Book author
               Text(
                 "Author: $bookAuthor",
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 18),
               ),
-              const SizedBox(height: 20),
-              // Book description
+              const SizedBox(height: 10),
               Text(
                 bookDescription,
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16),
               ),
             ],
           ),
